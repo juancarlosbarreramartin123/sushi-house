@@ -32,6 +32,8 @@ if (!nombresColumnas.includes("fecha_entrega")) {
     db.exec("ALTER TABLE pedidos ADD COLUMN fecha_entrega TEXT");
 }
 
+console.log("COLUMNAS DE PEDIDOS:", db.prepare("PRAGMA table_info(pedidos)").all());
+
 app.use(cors());
 app.use(express.json());
 
