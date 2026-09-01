@@ -14,19 +14,11 @@ db.exec(`
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         mesa TEXT,
         productos TEXT,
-        fecha TEXT
+        fecha TEXT,
+        estado TEXT DEFAULT 'pendiente',
+        fecha_entrega TEXT
     )
 `);
-
-const columnas = db.prepare("PRAGMA table_info(pedidos)").all();
-
-if (!columnas.some(columna => columna.name === "estado")) {
-    db.exec("ALTER TABLE pedidos ADD COLUMN estado TEXT DEFAULT 'pendiente'");
-}
-
-if (!columnas.some(columna => columna.name === "fecha_entrega")) {
-    db.exec("ALTER TABLE pedidos ADD COLUMN fecha_entrega TEXT");
-}
 
 console.log("COLUMNAS DE PEDIDOS:", db.prepare("PRAGMA table_info(pedidos)").all());
 
