@@ -18,6 +18,18 @@ db.exec(`
     )
 `);
 
+try {
+    db.exec("ALTER TABLE pedidos ADD COLUMN estado TEXT DEFAULT 'pendiente'");
+} catch (error) {
+    // La columna ya existe, no hacemos nada
+}
+
+try {
+    db.exec("ALTER TABLE pedidos ADD COLUMN fecha_entrega TEXT");
+} catch (error) {
+    // La columna ya existe, no hacemos nada
+}
+
 app.use(cors());
 app.use(express.json());
 
