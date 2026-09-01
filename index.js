@@ -19,6 +19,17 @@ db.exec(`
         fecha_entrega TEXT
     )
 `);
+try {
+    db.exec("ALTER TABLE pedidos ADD COLUMN estado TEXT DEFAULT 'pendiente'");
+} catch (error) {
+    console.log("La columna 'estado' ya existe, se ignora");
+}
+
+try {
+    db.exec("ALTER TABLE pedidos ADD COLUMN fecha_entrega TEXT");
+} catch (error) {
+    console.log("La columna 'fecha_entrega' ya existe, se ignora");
+}
 
 console.log("COLUMNAS DE PEDIDOS:", db.prepare("PRAGMA table_info(pedidos)").all());
 
