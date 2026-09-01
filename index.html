@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sushi Order</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="stile.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+ <div class="cart"  onclick="toggleCart()">
+        <span>🛒 Mi pedido (pulsa aquí para ver)</span>
+    <span id="total">0</span> 
+</div>
+
+<div id="cart-content">
+    <div id="cart-list"></div>
+    <div id="cart-footer"></div>
+</div>
+
+    <h1>Sushi House</h1>
+
+    <h2>Menu</h2>
+
+
+    <div class="product">
+        <div> 
+        <h2>Salmón</h2>
+        <p>Sushi de salmón</p>
+        <button onclick="removeProduct('sushi-salmon')" class="plus-less-button">-</button>
+        <span id="sushi-salmon" class="quantity" data-name="Sushi salmon">0</span>
+         <button onclick="addProduct('sushi-salmon')" class="plus-less-button">+</button>
+
+        <p>Salmón ahumado simple</p>
+        <button onclick="removeProduct('salmon-ahumado')" class="plus-less-button">-</button>
+         <span id="salmon-ahumado" class="quantity" data-name="Salmon ahumado">0</span>
+        <button onclick="addProduct('salmon-ahumado')" class="plus-less-button">+</button>
+        </div>
+       
+    </div>
+    <div class="product">
+        <div>
+        <h2>Gyozas</h2>
+        <p>Gyoza de atún</p>
+        <button onclick="removeProduct('gyoza-atun')" class="plus-less-button">-</button>
+        <span id="gyoza-atun" class="quantity" data-name="Gyoza atun">0</span>
+         <button onclick="addProduct('gyoza-atun')" class="plus-less-button">+</button>
+        <p>Gyoza de salmún</p>
+        <button onclick="removeProduct('gyoza-salmon')" class="plus-less-button">-</button>
+        <span id="gyoza-salmon" class="quantity" data-name="Gyoza salmon">0</span>
+        <button onclick="addProduct('gyoza-salmon')" class="plus-less-button">+</button>
+        </div>
+  
+    </div>
+    <div id="order-modal"></div>
+
+    <div class="product">
+    <div>
+        <h2>Makis</h2>
+
+        <p>Maki de salmón</p>
+        <button onclick="removeProduct('maki-salmon')" class="plus-less-button">-</button>
+        <span id="maki-salmon" class="quantity" data-name="Maki de salmón">0</span>
+        <button onclick="addProduct('maki-salmon')" class="plus-less-button">+</button>
+
+        <p>Maki de atún</p>
+        <button onclick="removeProduct('maki-atun')" class="plus-less-button">-</button>
+        <span id="maki-atun" class="quantity" data-name="Maki de atún">0</span>
+        <button onclick="addProduct('maki-atun')" class="plus-less-button">+</button>
+    </div>
+</div>
+
+<div class="product">
+    <div>
+        <h2>Entrantes</h2>
+
+        <p>Edamame</p>
+        <button onclick="removeProduct('edamame')" class="plus-less-button">-</button>
+        <span id="edamame" class="quantity" data-name="Edamame">0</span>
+        <button onclick="addProduct('edamame')" class="plus-less-button">+</button>
+
+        <p>Rollito de primavera</p>
+        <button onclick="removeProduct('rollito-primavera')" class="plus-less-button">-</button>
+        <span id="rollito-primavera" class="quantity" data-name="Rollito de primavera">0</span>
+        <button onclick="addProduct('rollito-primavera')" class="plus-less-button">+</button>
+    </div>
+</div>
+    
+
+</body>
+</html>

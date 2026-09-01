@@ -1,0 +1,88 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#tabla-pedidos {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+#tabla-pedidos th {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+#tabla-pedidos td {
+    background-color: white;
+    padding: 15px;
+}
+
+#tabla-pedidos tr td:first-child {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#tabla-pedidos button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}
+
+#tabla-pedidos button:hover {
+    opacity: 0.8;
+}
+
+
+/* ========================= */
+/* PEDIDO VERDE - MENOS DE 5 MIN */
+/* ========================= */
+
+#tabla-pedidos tr.tiempo-verde td {
+    background-color: #e3f7e8 !important;
+}
+
+#tabla-pedidos tr.tiempo-verde td:first-child {
+    border-left: 10px solid #2ecc71;
+}
+
+
+/* ========================= */
+/* PEDIDO NARANJA - 5 A 10 MIN */
+/* ========================= */
+
+#tabla-pedidos tr.tiempo-naranja td {
+    background-color: #fff0d6 !important;
+}
+
+#tabla-pedidos tr.tiempo-naranja td:first-child {
+    border-left: 10px solid #f39c12;
+}
+
+
+/* ========================= */
+/* PEDIDO ROJO - MÁS DE 10 MIN */
+/* ========================= */
+
+#tabla-pedidos tr.tiempo-rojo td {
+    background-color: #ffe1e1 !important;
+}
+
+#tabla-pedidos tr.tiempo-rojo td:first-child {
+    border-left: 10px solid #e74c3c;
+}
