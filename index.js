@@ -20,15 +20,11 @@ db.exec(`
 
 const columnas = db.prepare("PRAGMA table_info(pedidos)").all();
 
-const nombresColumnas = columnas.map(function(columna) {
-    return columna.name;
-});
-
-if (!nombresColumnas.includes("estado")) {
+if (!columnas.some(columna => columna.name === "estado")) {
     db.exec("ALTER TABLE pedidos ADD COLUMN estado TEXT DEFAULT 'pendiente'");
 }
 
-if (!nombresColumnas.includes("fecha_entrega")) {
+if (!columnas.some(columna => columna.name === "fecha_entrega")) {
     db.exec("ALTER TABLE pedidos ADD COLUMN fecha_entrega TEXT");
 }
 
