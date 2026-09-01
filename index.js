@@ -51,6 +51,8 @@ app.post("/pedido", function(req, res) {
     res.send("Pedido recibido correctamente");
 });
 
+console.log("VERSION NUEVA DEL SERVIDOR");
+
 app.get("/pedidos", function(req, res) {
     let consulta = db.prepare("SELECT * FROM pedidos WHERE DATE(fecha) = DATE('now') ORDER BY estado DESC, id DESC");
     let pedidos = consulta.all();
